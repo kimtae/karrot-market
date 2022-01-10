@@ -9,6 +9,10 @@ public class UserProfile {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @OneToOne
+    @JoinColumn(name = "userId")
+    private User user;
+
     @Column(nullable = false)
     private String email;
 
@@ -26,4 +30,5 @@ public class UserProfile {
     private String nearAddress1;
 
     private String nearAddress2;
+
 }

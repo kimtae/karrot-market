@@ -3,17 +3,13 @@ package site.karrot.server.entity;
 import javax.persistence.*;
 
 @Entity
-public class User {
+public class UserActivity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
-    private String email;
-
-    @Column(nullable = false)
-    private String password;
-
-
+    @OneToOne
+    @JoinColumn(name = "userId")
+    private User user;
 }
