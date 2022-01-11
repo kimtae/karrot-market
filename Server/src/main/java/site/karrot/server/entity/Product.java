@@ -15,11 +15,11 @@ public class Product {
     @JoinColumn(name = "userActivityId")
     private UserActivity userActivity;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "categoryId", nullable = false)
     private Category category;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "locaionId", nullable = false)
     private Location location;
 
