@@ -20,8 +20,8 @@ public class Product {
     private Category category;
 
     @ManyToOne
-    @JoinColumn(name = "locaionId", nullable = false)
-    private Location location;
+    @JoinColumn(name = "townLocationId", nullable = false)
+    private TownLocation townLocation;
 
     @OneToMany
     @JoinColumn(name = "productImgUrlId")
