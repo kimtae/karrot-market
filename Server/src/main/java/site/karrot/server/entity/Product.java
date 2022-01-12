@@ -18,8 +18,8 @@ public class Product {
 //    private UserActivity userActivity;
 
     @ManyToOne
-    @JoinColumn(name = "categoryId", nullable = false)
-    private Category category;
+    @JoinColumn(name = "productCategoryId", nullable = false)
+    private ProductCategory productCategory;
 
 //    @ManyToOne
 //    @JoinColumn(name = "townLocationId", nullable = false)
