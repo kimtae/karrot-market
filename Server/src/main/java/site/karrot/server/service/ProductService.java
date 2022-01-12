@@ -6,11 +6,11 @@ import site.karrot.server.entity.ProductCategory;
 
 public class ProductService {
 
-    public void postingProduct(ProductDto.Request request, String category) {
+    public Product postingProduct(ProductDto.Request request, String category) {
 
         Product product = new Product(request);
 
-        productRepository.save(product);
+        return productRepository.save(product);
     }
 
 }
