@@ -1,5 +1,7 @@
 package site.karrot.server.entity;
 
+import site.karrot.server.dto.ProductDto;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,21 +13,21 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idx;
 
-    @OneToOne
-    @JoinColumn(name = "userActivityId")
-    private UserActivity userActivity;
+//    @OneToOne
+//    @JoinColumn(name = "userActivityId")
+//    private UserActivity userActivity;
 
     @ManyToOne
-    @JoinColumn(name = "categoryId", nullable = false)
-    private Category category;
+    @JoinColumn(name = "productCategoryId", nullable = false)
+    private ProductCategory productCategory;
 
-    @ManyToOne
-    @JoinColumn(name = "townLocationId", nullable = false)
-    private TownLocation townLocation;
-
-    @OneToMany
-    @JoinColumn(name = "productImgUrlId")
-    List<ProductImgUrl> productImgUrls = new ArrayList<>();
+//    @ManyToOne
+//    @JoinColumn(name = "townLocationId", nullable = false)
+//    private TownLocation townLocation;
+//
+//    @OneToMany
+//    @JoinColumn(name = "productImgUrlId")
+//    List<ProductImgUrl> productImgUrls = new ArrayList<>();
 
     @Column(nullable = false)
     private String title;
@@ -41,6 +43,17 @@ public class Product {
 
     @Column(nullable = false)
     private Boolean isSold;
+
+    public Product() {
+
+    }
+
+    public Product(ProductDto.Request request) {
+        this.title = request.getTitle();
+        this.content = request.getContent();
+        this.isBought = request.getIsBought();
+        this.isSold = false;
+    }
 
 
 }

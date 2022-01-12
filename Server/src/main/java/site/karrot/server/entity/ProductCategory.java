@@ -3,14 +3,12 @@ package site.karrot.server.entity;
 import javax.persistence.*;
 
 @Entity
-public class Category {
+public class ProductCategory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private String category;
-
-
+    private String productCategory;
 }
