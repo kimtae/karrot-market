@@ -48,9 +48,11 @@ public class Product {
 
     }
 
-    public Product(ProductDto.Request request) {
+    public Product(ProductDto.Request request, ProductCategory productCategory) {
+        this.productCategory = productCategory;
         this.title = request.getTitle();
         this.content = request.getContent();
+        this.hitCount = 0;
         this.isBought = request.getIsBought();
         this.isSold = false;
     }
