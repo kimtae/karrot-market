@@ -11,16 +11,18 @@ import site.karrot.server.service.ProductService;
 public class BeanConfig {
 
     private final ProductRepository productRepository;
+    private final ProductCategoryRepository productCategoryRepository;
 
     @Autowired
-    public BeanConfig(ProductRepository productRepository) {
+    public BeanConfig(ProductRepository productRepository, ProductCategoryRepository productCategoryRepository) {
         this.productRepository = productRepository;
+        this.productCategoryRepository = productCategoryRepository;
     }
 
     //프로덕트 서비스 빈 등록
     @Bean
     public ProductService scanProductService() {
-        return new ProductService(productRepository);
+        return new ProductService(productRepository, productCategoryRepository);
     }
 
 }
