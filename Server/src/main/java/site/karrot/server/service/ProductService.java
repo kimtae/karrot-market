@@ -7,6 +7,8 @@ import site.karrot.server.entity.ProductCategory;
 import site.karrot.server.repository.ProductCategoryRepository;
 import site.karrot.server.repository.ProductRepository;
 
+import java.util.List;
+
 public class ProductService {
 
     private final ProductRepository productRepository;
@@ -31,4 +33,7 @@ public class ProductService {
         return productRepository.save(product);
     }
 
+    public void getProductList() {
+        List<Product> productList = productRepository.findAll();
+    }
 }
