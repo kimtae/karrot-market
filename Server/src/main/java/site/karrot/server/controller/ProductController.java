@@ -17,7 +17,7 @@ public class ProductController {
         this.productService = productService;
     }
 
-    @GetMapping(/products)
+    @GetMapping("/products")
     public void getProductList() {
         productService.getProductList();
     }
