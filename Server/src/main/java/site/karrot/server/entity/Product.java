@@ -1,12 +1,12 @@
 package site.karrot.server.entity;
 
+import lombok.Getter;
 import site.karrot.server.dto.ProductDto;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
+@Getter
 public class Product {
 
     @Id
