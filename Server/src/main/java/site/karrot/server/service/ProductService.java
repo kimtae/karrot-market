@@ -20,7 +20,11 @@ public class ProductService {
 
     public Product postingProduct(ProductDto.Request request) {
 
-        ProductCategory productCategory = productCategoryRepository.findByProductCategory(request.getProductCategory());
+        ProductCategory productCategory = productCategoryRepository
+                .findByProductCategory(request.getProductCategory())
+                .orElseThrow(
+                        () -> new NullPointerException("존재하지 않는 카테고리입니다.")
+                );
 
         Product product = new Product(request, productCategory);
 
