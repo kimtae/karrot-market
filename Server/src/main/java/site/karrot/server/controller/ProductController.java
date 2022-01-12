@@ -23,6 +23,6 @@ public class ProductController {
 
     @GetMapping("/product")
     public Product postingProduct(@RequestBody ProductDto.Request requestDto) {
-        return productService.postingProduct(requestDto, "중고가전");
+        return productService.postingProduct(requestDto);
     }
 }

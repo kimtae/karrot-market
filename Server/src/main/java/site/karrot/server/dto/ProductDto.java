@@ -12,7 +12,7 @@ public class ProductDto {
     @Builder
     @ToString
     public static class Request{
-        private String category;
+        private String productCategory;
 
         private String title;
 

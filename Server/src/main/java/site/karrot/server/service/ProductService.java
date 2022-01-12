@@ -15,7 +15,7 @@ public class ProductService {
         this.productRepository = productRepository;
     }
 
-    public Product postingProduct(ProductDto.Request request, String category) {
+    public Product postingProduct(ProductDto.Request request) {
 
         Product product = new Product(request);
 
