@@ -17,11 +17,6 @@ public class ProductController {
         this.productService = productService;
     }
 
-    @GetMapping("/products")
-    public void getProductList() {
-        productService.getProductList();
-    }
-
     @PostMapping("/product")
     public Product postingProduct(@RequestBody ProductDto.Request requestDto) {
         return productService.postingProduct(requestDto);
