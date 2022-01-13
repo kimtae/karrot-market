@@ -58,4 +58,10 @@ public class Product {
     }
 
 
+    public void updateProduct(ProductDto.Request request) {
+        this.title = request.getTitle();
+        this.content = request.getContent();
+        this.isBought = request.getIsBought();
+        this.isSold = false;
+    }
 }
