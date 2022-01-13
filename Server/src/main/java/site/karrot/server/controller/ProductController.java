@@ -26,4 +26,10 @@ public class ProductController {
     public Product postingProduct(@RequestBody ProductDto.Request requestDto) {
         return productService.postingProduct(requestDto);
     }
+
+    @GetMapping("/product/{idx}")
+    public Product getProduct(@PathVariable Long idx) {
+        return productService.getProduct(idx);
+    }
+
 }
