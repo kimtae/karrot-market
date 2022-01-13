@@ -45,11 +45,11 @@ public class ProductService {
         );
     }
 
-    public void updateProduct(Long idx) {
+    public void updateProduct(Long idx, ProductDto.Request request) {
         Product product = productRepository.findById(idx).orElseThrow(
                 () -> new NullPointerException("존재하지 않는 글입니다.")
         );
         //TODO IDX
-        product.updateProduct(idx);
+        product.updateProduct(request);
     }
 }

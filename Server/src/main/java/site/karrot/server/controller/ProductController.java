@@ -33,8 +33,8 @@ public class ProductController {
     }
 
     @PatchMapping("/product/{idx}")
-    public String updateProduct(@PathVariable Long idx) {
-        productService.updateProduct(idx);
+    public String updateProduct(@PathVariable Long idx, @RequestBody ProductDto.Request request) {
+        productService.updateProduct(idx, request);
         return "게시글이 수정되었습니다 !";
     }
 }
