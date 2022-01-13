@@ -4,7 +4,8 @@ import lombok.Getter;
 
 @Getter
 public enum ProductErrorCode {
-    NOT_FOUND_PRODUCT("상품 게시글을 찾지 못했습다.");
+    NOT_FOUND_PRODUCT("상품 게시글을 찾지 못했습니다."),
+    NOT_MATCHED_CATEGORY("카테고리가 맞지 않습니다.");
 
     //에러 메시지
     private final String message;
