@@ -41,8 +41,15 @@ public class ProductService {
     public Product getProduct(Long idx) {
         return productRepository.findById(idx).orElseThrow(
                 () -> new NullPointerException("존재하지 않는 글입니다.")
-                //TODO 카테고리
+                //TODO IDX
         );
     }
 
+    public void updateProduct(Long idx) {
+        Product product = productRepository.findById(idx).orElseThrow(
+                () -> new NullPointerException("존재하지 않는 글입니다.")
+        );
+        //TODO IDX
+        product.updateProduct(idx);
+    }
 }
