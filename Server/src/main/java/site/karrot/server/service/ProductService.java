@@ -35,5 +35,14 @@ public class ProductService {
 
     public void getProductList() {
         List<Product> productList = productRepository.findAll();
+        //TODO 스트림 함수 사용한 리스폰스 DTO
     }
+
+    public Product getProduct(Long idx) {
+        return productRepository.findById(idx).orElseThrow(
+                () -> new NullPointerException("존재하지 않는 글입니다.")
+                //TODO 카테고리
+        );
+    }
+
 }
