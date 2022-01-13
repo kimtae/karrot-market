@@ -6,6 +6,8 @@ import site.karrot.server.dto.ProductDto;
 import site.karrot.server.entity.Product;
 import site.karrot.server.service.ProductService;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/api")
 public class ProductController {
@@ -23,7 +25,7 @@ public class ProductController {
     }
 
     @PostMapping("/product")
-    public Product postingProduct(@RequestBody ProductDto.Request requestDto) {
+    public Product postingProduct(@Valid @RequestBody ProductDto.Request requestDto) {
         return productService.postingProduct(requestDto);
     }
 
@@ -33,7 +35,7 @@ public class ProductController {
     }
 
     @PatchMapping("/product/{idx}")
-    public String updateProduct(@PathVariable Long idx, @RequestBody ProductDto.Request request) {
+    public String updateProduct(@PathVariable Long idx,@Valid @RequestBody ProductDto.Request request) {
         productService.updateProduct(idx, request);
         return "게시글이 수정되었습니다 !";
     }
