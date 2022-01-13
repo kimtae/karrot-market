@@ -27,4 +27,17 @@ public class ProductDto {
         @NotNull
         private Boolean isBought;
     }
+
+    @Getter
+    @Builder
+    @ToString
+    public static class Response{
+        private Long idx;
+        private String category;
+        private String title;
+        private String content;
+        private Integer hitCount;
+        private Boolean isBought;
+        private Boolean isSold;
+    }
 }
