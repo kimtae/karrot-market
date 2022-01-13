@@ -1,6 +1,7 @@
 package site.karrot.server.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import site.karrot.server.dto.ProductDto;
 import site.karrot.server.entity.Product;
 import site.karrot.server.entity.ProductCategory;
@@ -38,11 +39,14 @@ public class ProductService {
         //TODO 스트림 함수 사용한 리스폰스 DTO
     }
 
+    @Transactional
     public Product getProduct(Long idx) {
-        return productRepository.findById(idx).orElseThrow(
+        Product product =  productRepository.findById(idx).orElseThrow(
                 () -> new NullPointerException("존재하지 않는 글입니다.")
                 //TODO IDX
         );
+        product.updateHitCount();
+        return product;
     }
 
     public void updateProduct(Long idx, ProductDto.Request request) {

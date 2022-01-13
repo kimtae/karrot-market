@@ -64,4 +64,8 @@ public class Product {
         this.isBought = request.getIsBought();
         this.isSold = false;
     }
+
+    public void updateHitCount() {
+        this.hitCount++;
+    }
 }
